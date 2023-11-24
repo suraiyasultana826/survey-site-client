@@ -1,0 +1,135 @@
+[
+    {
+        "id": 1,
+        "image": "https://example.com/survey_images/employee_survey.jpg",
+        "title": "Employee Satisfaction Survey",
+        "category": "Workplace",
+        "voted":56,
+        "description": "A survey to measure employee satisfaction and gather feedback on workplace conditions and management.",
+        "questionOne": "On a scale of 1-10, how satisfied are you with your current work environment?",
+        "questionTwo": "What aspects of your job do you find most fulfilling?",
+        "questionThree": "Are there any specific areas where you believe improvement is needed?"
+    },
+    {
+        "id": 2,
+        "image": "https://example.com/survey_images/employee_survey.jpg",
+        "title": "Employee Satisfaction Survey",
+        "category": "Workplace",
+        "voted":56,
+        "description": "A survey to measure employee satisfaction and gather feedback on workplace conditions and management.",
+        "questionOne": "On a scale of 1-10, how satisfied are you with your current work environment?",
+        "questionTwo": "What aspects of your job do you find most fulfilling?",
+        "questionThree": "Are there any specific areas where you believe improvement is needed?"
+    },
+    {
+        "id": 3,
+        "image": "https://example.com/survey_images/employee_survey.jpg",
+        "title": "Customer Feedback Survey",
+        "category": "Business",
+        "voted":56,
+        "description": "Gather customer opinions and feedback to improve products and services. Understand customer satisfaction and expectations.",
+        "questionOne": "How likely are you to recommend our products/services to others?",
+        "questionTwo": "What features or improvements would you like to see in our products?",
+        "questionThree": "How satisfied are you with the customer service you've received?"
+    },
+    {
+        "id": 4,
+        "image": "https://example.com/survey_images/employee_survey.jpg",
+        "title": "Customer Feedback Survey",
+        "category": "Business",
+        "voted":56,
+        "description": "Gather customer opinions and feedback to improve products and services. Understand customer satisfaction and expectations.",
+        "questionOne": "How likely are you to recommend our products/services to others?",
+        "questionTwo": "What features or improvements would you like to see in our products?",
+        "questionThree": "How satisfied are you with the customer service you've received?"
+    },
+    {
+        "id": 5,
+        "image": "https://example.com/survey_images/employee_survey.jpg",
+        "title": "Customer Feedback Survey",
+        "category": "Business",
+        "voted":56,
+        "description": "Gather customer opinions and feedback to improve products and services. Understand customer satisfaction and expectations.",
+        "questionOne": "How likely are you to recommend our products/services to others?",
+        "questionTwo": "What features or improvements would you like to see in our products?",
+        "questionThree": "How satisfied are you with the customer service you've received?"
+    },
+    {
+        "id": 6,
+        "image": "https://example.com/survey_images/employee_survey.jpg",
+        "title": "Health and Wellness Survey",
+        "category": "Health",
+        "voted":56,
+        "description": "An assessment of health and wellness habits to promote a healthier lifestyle. Gather information on diet, exercise, and mental health.",
+        "questionOne": "How many days a week do you engage in physical exercise?",
+        "questionTwo": "Do you follow a specific diet or eating plan?",
+        "questionThree": "How would you rate your overall mental well-being?"
+    },
+    {
+        "id": 7,
+        "image": "https://example.com/survey_images/employee_survey.jpg",
+        "title": "Environmental Awareness Survey",
+        "category": "Environment",
+        "voted":56,
+        "description": "Collect data on environmental awareness, habits, and opinions. Identify areas for improvement in sustainable practices.",
+        "questionOne": "How often do you recycle household waste?",
+        "questionTwo": "Are you conscious of your water and electricity consumption?",
+        "questionThree": "What environmental issues do you consider most important?"
+    },
+    {
+        "id": 8,
+        "image": "https://example.com/survey_images/employee_survey.jpg",
+        "title": "Technology Usage Survey",
+        "category": "Technology",
+        "voted":56,
+        "description": "Explore how people use technology in their daily lives. Gather insights into device preferences, internet usage, and tech trends.",
+        "questionOne": "Which devices do you use most frequently in your daily life?",
+        "questionTwo": "How many hours per day do you spend on the internet?",
+        "questionThree": "What emerging technologies are you most interested in?"
+    },
+    {
+        "id": 9,
+        "image": "https://example.com/survey_images/employee_survey.jpg",
+        "title": "Education Feedback Survey",
+        "category": "Education",
+        "voted":56,
+        "description": "Gather feedback from students and teachers to improve the education system. Assess teaching methods, curriculum, and overall satisfaction.",
+        "questionOne": "How would you rate the effectiveness of the current curriculum?",
+        "questionTwo": "What teaching methods do you find most engaging?",
+        "questionThree": "Are there any subjects or topics you feel are not adequately covered?"
+    },
+  
+    {
+        "id": 10,
+        "image": "https://example.com/survey_images/employee_survey.jpg",
+        "title": "Social Media Usage Survey",
+        "category": "Social Media",
+        "voted":56,
+        "description": "Explore social media habits and preferences. Gather insights into platform usage, content preferences, and online interaction.",
+        "questionOne": "Which social media platforms do you use regularly?",
+        "questionTwo": "What type of content do you find most interesting on social media?",
+        "questionThree": "How often do you engage with others through social media?"
+    },
+    {
+        "id": 11,
+        "image": "https://example.com/survey_images/employee_survey.jpg",
+        "title": "Social Media Usage Survey",
+        "category": "Social Media",
+        "voted":56,
+        "description": "Explore social media habits and preferences. Gather insights into platform usage, content preferences, and online interaction.",
+        "questionOne": "Which social media platforms do you use regularly?",
+        "questionTwo": "What type of content do you find most interesting on social media?",
+        "questionThree": "How often do you engage with others through social media?"
+    },
+    {
+        "id": 12,
+        "image": "https://example.com/survey_images/employee_survey.jpg",
+        "title": "Social Media Usage Survey",
+        "category": "Social Media",
+        "voted":56,
+        "description": "Explore social media habits and preferences. Gather insights into platform usage, content preferences, and online interaction.",
+        "questionOne": "Which social media platforms do you use regularly?",
+        "questionTwo": "What type of content do you find most interesting on social media?",
+        "questionThree": "How often do you engage with others through social media?"
+    }
+]
