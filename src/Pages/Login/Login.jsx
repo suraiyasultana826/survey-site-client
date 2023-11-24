@@ -1,12 +1,16 @@
 import { useContext } from 'react';
 import login from '../../assets/login.jpg'
 import { AuthContext } from '../../providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
 const Login = () => {
 
 
     const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
 
     const handleLogin = event => {
@@ -19,8 +23,18 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                Swal.fire({
+                    // position: "top-end",
+                    icon: "success",
+                    title: "Successfully Logged in",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate(from, { replace: true });
             })
     }
+    // suraiya@tanu.gmail.com 
+    // pass: 123456aA!
     return (
         <>
             <Helmet>
