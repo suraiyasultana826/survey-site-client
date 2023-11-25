@@ -8,7 +8,7 @@ const Explore = () => {
         fetch('survey.json')
         .then( res => res.json())
         .then(data => {
-            const categorySurvey = data.filter(item => item.category === 'Technology');
+            const categorySurvey = data.filter(item => item.category === 'Business');
             setSurvey(categorySurvey)
         })
     },[])
@@ -19,7 +19,7 @@ const Explore = () => {
             </Helmet>
             <h2>Choose A Survey</h2>
 
-            <div>
+            <div className="grid lg:grid-cols-3 md:grid-cols-2">
                 {
                     survey.map(item =>  <SurveyPage key={item.id}
                     item={item}></SurveyPage>)
