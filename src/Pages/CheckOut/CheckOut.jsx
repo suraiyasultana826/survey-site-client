@@ -1,5 +1,9 @@
 import { useLoaderData } from "react-router-dom";
-
+import { AiTwotoneDislike } from "react-icons/ai";
+import { AiOutlineLike } from "react-icons/ai";
+import { AiFillLike } from "react-icons/ai";
+import { AiFillDislike } from "react-icons/ai";
+import { useState } from "react";
 const CheckOut = () => {
     const survey = useLoaderData();
     const { title, _id, image, category,
@@ -8,6 +12,10 @@ const CheckOut = () => {
         questionOne,
         questionTwo,
         questionThree } = survey;
+
+        const [countLike, setCountLike] = useState(0)
+        const [countDisLike, setCountDisLike] = useState(0)
+
     return (
         <div>
             <div className="text-center">
@@ -21,6 +29,18 @@ const CheckOut = () => {
                     <div>
                     <img src={image} className="max-w-sm rounded-lg " />
                     <input type="text" name="comment" placeholder="Write a comment" className="input input-bordered w-full max-w-xs my-5" />
+                    <button className="btn bg-blue-600 text-white">Post</button>
+                   <div>
+                   <button onClick={() => setCountLike((countLike) => countLike + 1)} className="btn mx-5">
+                    {
+                        (countLike > 0 && (countDisLike === 0 ) )  ? <AiFillLike className="w-10 h-10 " />  : <AiOutlineLike className="w-10 h-10 "  />
+                    }
+                   </button>
+                   <button onClick={() => setCountDisLike((countDisLike) => countDisLike + 1)} className="btn"> 
+                   {
+                        (countDisLike > 0 && (countLike === 0 || countLike > 0 )) ? <AiFillDislike className="w-10 h-10" /> : <AiTwotoneDislike className="w-10 h-10" />
+                    } </button>
+                   </div>
                     </div>
                    
                   
