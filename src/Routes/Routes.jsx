@@ -9,6 +9,8 @@ import SignUp from "../Pages/SignUp/SignUp";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Explore from "../Pages/Explore/Explore";
 import CheckOut from "../Pages/CheckOut/CheckOut";
+import PrivateRoute from "./PrivateRoute";
+import CreateSurvey from "../Pages/CreateSurvey/CreateSurvey";
 
   
 export const router = createBrowserRouter([
@@ -35,8 +37,12 @@ export const router = createBrowserRouter([
         },
         {
           path: 'checkout/:id',
-          element: <CheckOut></CheckOut>,
+          element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:5000/surveys/${params.id}`)
+        },
+        {
+          path:'create',
+          element:<PrivateRoute><CreateSurvey></CreateSurvey></PrivateRoute>
         }
       ]
     },

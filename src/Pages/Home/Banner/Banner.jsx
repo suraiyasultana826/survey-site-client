@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import banner from '../../../assets/background.jpg'
 const Banner = () => {
     return (
@@ -7,7 +8,7 @@ const Banner = () => {
            <h1 className='md:text-5xl text-white font-bold lg:my-10'>Surveys
                 at Your Fingertips!</h1>
                 <p className='text-white md:font-semibold md:text-xl lg:my-10'>We help you get one step closer to building your perfect survey. These survey, form, and questionnaire templates are made with well researched survey questions to simplify your work. Choose your free template and get started!</p>
-                <button className='btn '>Explore</button>
+               <Link to='/explore'> <button className='btn '>Explore</button></Link>
            </div>
           </div>
 

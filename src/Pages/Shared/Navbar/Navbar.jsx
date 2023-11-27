@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import {  BiSolidUserCircle } from 'react-icons/bi';
 
 const Navbar = () => {
     const {user, logOut} = useContext(AuthContext);
@@ -12,6 +13,7 @@ const Navbar = () => {
     const navOptions = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='explore'>Explore</Link></li>
+        <li><Link to='/create'>Create Survey</Link></li>
 
         
        
@@ -43,7 +45,12 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                {
+                    user ? <div className="lg:flex justify-center items-center lg:gap-3">
+                        <p className="font-bold w-1/2 lg:w-full">{user.displayName}</p>
+                        <img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" />
+                    </div> : <BiSolidUserCircle className="w-10 h-10"></BiSolidUserCircle>
+                   }
                 </div>
             </div>
 

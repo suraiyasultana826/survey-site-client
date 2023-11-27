@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import SocialLogin from "../Login/SocialLogin";
 
 
 
@@ -96,6 +97,7 @@ const SignUp = () => {
                             <button className="btn btn-primary">Sign Up</button>
                         </div>
                     </form>
+                    <SocialLogin></SocialLogin>
                     <p className="mx-auto"><small>Already have an account? <Link to='/login' className="font-bold text-blue-700">Login</Link></small></p>
                 </div>
             </div>
