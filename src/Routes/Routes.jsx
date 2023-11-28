@@ -15,6 +15,7 @@ import Dashboard from "../Layout/DashBoard/Dashboard";
 import MySurvey from "../Layout/DashBoard/MySurvey/MySurvey";
 import Charts from "../Layout/DashBoard/Charts/Charts";
 import Faq from "../Pages/Home/Faq/Faq";
+import AllUsers from "../Layout/DashBoard/AllUsers/AllUsers";
 
   
 export const router = createBrowserRouter([
@@ -57,7 +58,7 @@ export const router = createBrowserRouter([
       children: [
         {
           path: 'survey',
-          element: <MySurvey></MySurvey>
+          element: <PrivateRoute><MySurvey></MySurvey></PrivateRoute>
         },
         {
           path:'explore',
@@ -75,6 +76,11 @@ export const router = createBrowserRouter([
         {
           path:'userHome',
           element:<Faq></Faq>
+        },
+        //admin routes
+        {
+          path:'users',
+          element:<AllUsers></AllUsers>
         }
       ]
     }

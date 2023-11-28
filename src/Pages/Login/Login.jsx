@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import login from '../../assets/login.jpg'
-import { AuthContext } from '../../providers/AuthProvider';
+import { AuthContext } from '../../providers/AuthProvider'; //eitay kno error nai, almost thing
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
