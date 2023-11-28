@@ -4,11 +4,13 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
-import SocialLogin from './SocialLogin';
+import { FaGoogle } from 'react-icons/fa';
+import useAxiosPublic from '../Hooks/useAxiosPublic';
 const Login = () => {
 
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
+    const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -34,6 +36,37 @@ const Login = () => {
                 navigate(from, { replace: true });
             })
     }
+
+
+    const handleGoogle = () => {
+        googleSignIn()
+            .then((result) => {
+                console.log(result.user);
+                const userInfo = {
+                    email: result.user?.email,
+                    name: result.user?.displayName
+                }
+                axiosPublic.post('/users', userInfo)
+                .then(res => {
+                    console.log(res.data);
+                    navigate('/');
+                })
+                // toast.success('Successfully Logged In!')
+                Swal.fire({
+                    // position: "top-end",
+                    icon: "success",
+                    title: "Successfully Logged in",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
+
+
     // suraiya@tanu.gmail.com 
     // pass: 123456aA!
     return (
@@ -69,8 +102,8 @@ const Login = () => {
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
-                        <SocialLogin></SocialLogin>
-
+                        {/* <SocialLogin></SocialLogin> */}
+                        <button onClick={handleGoogle} className='btn bg-blue-500 text-white w-3/4 mx-auto'><FaGoogle className="mr-4"></FaGoogle>Google</button>
                         <p className='mx-auto'><small>New Here? <Link to='/signup' className='font-bold text-blue-700'> Create an Account</Link></small></p>
                     </div>
                 </div>

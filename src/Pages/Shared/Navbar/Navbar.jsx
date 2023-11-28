@@ -14,6 +14,7 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='explore'>Explore</Link></li>
         <li><Link to='/create'>Create Survey</Link></li>
+        <li><Link to='/dashboard/survey'>My Survey</Link></li>
 
         
        

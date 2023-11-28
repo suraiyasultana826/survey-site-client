@@ -11,6 +11,10 @@ import Explore from "../Pages/Explore/Explore";
 import CheckOut from "../Pages/CheckOut/CheckOut";
 import PrivateRoute from "./PrivateRoute";
 import CreateSurvey from "../Pages/CreateSurvey/CreateSurvey";
+import Dashboard from "../Layout/DashBoard/Dashboard";
+import MySurvey from "../Layout/DashBoard/MySurvey/MySurvey";
+import Charts from "../Layout/DashBoard/Charts/Charts";
+import Faq from "../Pages/Home/Faq/Faq";
 
   
 export const router = createBrowserRouter([
@@ -46,5 +50,33 @@ export const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path: 'dashboard',
+      element: <Dashboard></Dashboard>,
+      errorElement:<ErrorPage></ErrorPage>,
+      children: [
+        {
+          path: 'survey',
+          element: <MySurvey></MySurvey>
+        },
+        {
+          path:'explore',
+          element:<Explore></Explore>
+
+        },
+        {
+          path:'charts',
+          element:<Charts></Charts>
+        },
+        {
+          path:'create',
+          element: <CreateSurvey></CreateSurvey>
+        },
+        {
+          path:'userHome',
+          element:<Faq></Faq>
+        }
+      ]
+    }
   ]);
 

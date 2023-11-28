@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import SocialLogin from "../Login/SocialLogin";
+import { FaGoogle } from "react-icons/fa";
 
 
 
@@ -13,7 +13,7 @@ const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
 
-    const {createUser, updateUserProfile} = useContext(AuthContext);
+    const {createUser, updateUserProfile, googleSignIn} = useContext(AuthContext);
     const navigate = useNavigate();
 
     const onSubmit = data => {
@@ -38,6 +38,25 @@ const SignUp = () => {
             .catch(error => console.log(error))
         })
     };
+
+    const handleGoogle = () => {
+        googleSignIn()
+            .then((result) => {
+                console.log(result.user);
+                // toast.success('Successfully Logged In!')
+                Swal.fire({
+                    // position: "top-end",
+                    icon: "success",
+                    title: "Successfully Signed Up",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
 
     return (
        <>
@@ -97,7 +116,7 @@ const SignUp = () => {
                             <button className="btn btn-primary">Sign Up</button>
                         </div>
                     </form>
-                    <SocialLogin></SocialLogin>
+                    <button onClick={handleGoogle} className='btn bg-blue-500 text-white w-3/4 mx-auto'><FaGoogle className="mr-4"></FaGoogle>Google</button>
                     <p className="mx-auto"><small>Already have an account? <Link to='/login' className="font-bold text-blue-700">Login</Link></small></p>
                 </div>
             </div>
