@@ -18,6 +18,8 @@ const Dashboard = () => {
                      <li><NavLink to='/dashboard/charts'> <RiSurveyFill />Admin Survey</NavLink></li>
                     <li><NavLink to='/dashboard/create'> <FaChartPie />Create Survey</NavLink></li>
                     <li><NavLink to='/dashboard/users'> <FaUsers></FaUsers>All Users</NavLink></li>
+                    <li><NavLink to='/dashboard/proUser'> <FaChartLine />Be A Pro</NavLink></li>
+
                     </>
                     :
                     <>
@@ -26,6 +28,7 @@ const Dashboard = () => {
                     </li>
                     <li><NavLink to='/dashboard/create'> <FaChartPie />Create Survey</NavLink></li>
                     <li><NavLink to='/dashboard/explore'> <FaChartLine />Complete Survey</NavLink></li>
+                    <li><NavLink to='/dashboard/proUser'> <FaChartLine />Be A Pro</NavLink></li>
                     </>
                    }
                     <div className="divider"></div>

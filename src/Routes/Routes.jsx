@@ -16,6 +16,7 @@ import MySurvey from "../Layout/DashBoard/MySurvey/MySurvey";
 import Charts from "../Layout/DashBoard/Charts/Charts";
 import Faq from "../Pages/Home/Faq/Faq";
 import AllUsers from "../Layout/DashBoard/AllUsers/AllUsers";
+import ProUser from "../Pages/Pro/ProUser";
 
   
 export const router = createBrowserRouter([
@@ -49,6 +50,7 @@ export const router = createBrowserRouter([
           path:'create',
           element:<PrivateRoute><CreateSurvey></CreateSurvey></PrivateRoute>
         }
+       
       ]
     },
     {
@@ -77,11 +79,16 @@ export const router = createBrowserRouter([
           path:'userHome',
           element:<Faq></Faq>
         },
+        {
+          path:'proUser',
+          element:<ProUser></ProUser>
+        },
         //admin routes
         {
           path:'users',
           element:<AllUsers></AllUsers>
         }
+       
       ]
     }
   ]);
