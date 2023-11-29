@@ -2,8 +2,13 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import useAuth from "../Hooks/useAuth";
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const CheckOutForm = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
     const [error, setError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
     const [transactionId, setTransactionId] = useState('');
@@ -13,6 +18,7 @@ const CheckOutForm = () => {
     const {user} = useAuth();
     const price = 1000;
     useEffect( () => {
+
         axiosSecure.post('/create-payment-intent', {price})
         .then(res => {
             console.log(res.data.clientSecret);
@@ -60,6 +66,17 @@ const CheckOutForm = () => {
             if(paymentIntent.status === 'succeeded'){
                 console.log('transaction id', paymentIntent.id);
                 setTransactionId(paymentIntent.id);
+                //save the payment in the database
+                const payment ={
+                    email: user.email,
+                    price: price,
+                    transactionId: paymentIntent.id,
+                    date: new Date(),
+                }
+                const res = await axiosSecure.post('/payments', payment);
+                console.log('payment saved',res);
+                Swal.fire("You are now a pro user!");
+                navigate(from, { replace: true });
             }
         }
     }
