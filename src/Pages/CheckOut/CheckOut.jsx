@@ -55,7 +55,7 @@ const CheckOut = () => {
                 questionThree
             }
             console.log(survey);
-            fetch('http://localhost:5000/completed', {
+            fetch('https://surver-site-server.vercel.app/completed', {
                 method: 'POST',
                 headers: {
                     'content-type' : 'application/json'

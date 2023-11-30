@@ -5,7 +5,7 @@ import SurveyPage from "../SurveyPage/SurveyPage";
 const Explore = () => {
     const [survey, setSurvey] = useState([]);
     useEffect( () => {
-        fetch('http://localhost:5000/surveys')
+        fetch('https://surver-site-server.vercel.app/surveys')
         .then( res => res.json())
         .then(data => {
             // const categorySurvey = data.filter(item => item.category === 'Business');

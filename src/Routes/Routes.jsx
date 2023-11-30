@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
         {
           path: 'checkout/:id',
           element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/surveys/${params.id}`)
+          loader: ({params}) => fetch(`https://surver-site-server.vercel.app/surveys/${params.id}`)
         },
         {
           path:'create',

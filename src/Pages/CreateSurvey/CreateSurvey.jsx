@@ -22,7 +22,7 @@ const CreateSurvey = () => {
             url, category
                 }
         console.log(survey);
-        fetch('http://localhost:5000/surveys', {
+        fetch('https://surver-site-server.vercel.app/surveys', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
